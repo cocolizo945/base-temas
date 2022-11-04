@@ -20,3 +20,4 @@ C:\Users\coquito\Documents\RiderProjects\Wind\base-temas\bin\Debug\K4os.Hash.xxH
 C:\Users\coquito\Documents\RiderProjects\Wind\base-temas\obj\Debug\base-temas.csproj.CopyComplete
 C:\Users\coquito\Documents\RiderProjects\Wind\base-temas\obj\Debug\base-temas.exe
 C:\Users\coquito\Documents\RiderProjects\Wind\base-temas\obj\Debug\base-temas.pdb
+C:\Users\coquito\Documents\RiderProjects\Wind\base-temas\obj\Debug\Wind.Form1.resources

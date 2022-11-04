@@ -19,8 +19,17 @@ namespace Wind
         public Form1()
         {
             InitializeComponent();
+            MySqlCommand cmdtbs = new MySqlCommand("show tables;", conn);
+            conn.Open();
+            MySqlDataReader dR = cmdtbs.ExecuteReader();
+            while (dR.Read() == true)
+            {
+                cboTables.Items.Add(dR[0]);
+            }
 
         }
+
+       
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -54,6 +63,27 @@ namespace Wind
             txtName.Text = "";
             txtID.Text = "";
             conn.Close();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            conn.Open();
+            // MessageBox.Show("text" + cboTables.Text + " selected text" + cboTables.SelectedText);
+            string tabla = cboTables.Text;
+            String load = "select * from "+tabla+";";
+            MySqlCommand cmdld = new MySqlCommand(load,conn);
+            MySqlDataAdapter adp = new MySqlDataAdapter();
+            adp.SelectCommand = cmdld;
+            DataTable tabla1 = new DataTable();
+            adp.Fill(tabla1);
+            dvgData.DataSource = tabla1;
+            conn.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
